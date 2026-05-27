@@ -80,10 +80,10 @@ export default function Sidebar({
             </div>
             <div>
               <h1 className="text-[17px] font-bold tracking-tight bg-gradient-to-r from-white via-purple-200 to-cyber-neonCyan bg-clip-text text-transparent dark:block hidden">
-                Antigravity AI
+                ChatNova
               </h1>
               <h1 className="text-[17px] font-bold tracking-tight bg-gradient-to-r from-indigo-900 to-purple-700 bg-clip-text text-transparent dark:hidden block">
-                Antigravity AI
+                ChatNova
               </h1>
               <span className="text-[9px] font-semibold text-purple-400 uppercase tracking-widest block -mt-0.5">
                 Next-Gen Core

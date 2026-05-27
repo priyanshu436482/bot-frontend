@@ -114,7 +114,7 @@ export default function ChatArea({
               <p className={`text-sm mt-2.5 mb-8 max-w-md ${
                 theme === 'dark' ? 'text-purple-300/70' : 'text-indigo-950/60'
               }`}>
-                Welcome to Antigravity AI. Supply your API Key in <code className="text-pink-400 font-mono">.env</code> to connect live, or run immediate UI simulation tests below.
+                Welcome to ChatNova. Supply your API Key in <code className="text-pink-400 font-mono">.env</code> to connect live, or run immediate UI simulation tests below.
               </p>
 
               {/* Suggestions Grid */}
@@ -173,7 +173,7 @@ export default function ChatArea({
                     <span className={`text-xs font-semibold tracking-wider uppercase ${
                       theme === 'dark' ? 'text-purple-400' : 'text-indigo-600'
                     }`}>
-                      Antigravity AI is streaming...
+                      ChatNova is streaming...
                     </span>
                     <div className="flex items-center gap-1.5 py-1.5">
                       <span className={`w-2 h-2 rounded-full typing-dot ${theme === 'dark' ? 'bg-cyber-neonCyan' : 'bg-indigo-600'}`} />
@@ -221,7 +221,7 @@ export default function ChatArea({
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask Antigravity anything... (Enter to send, Shift+Enter for new line)"
+              placeholder="Ask ChatNova anything... (Enter to send, Shift+Enter for new line)"
               rows={1}
               data-gramm="false"
               data-enable-grammarly="false"

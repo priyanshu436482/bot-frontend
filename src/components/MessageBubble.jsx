@@ -115,7 +115,7 @@ export default function MessageBubble({ message, theme }) {
               ? theme === 'dark' ? 'text-white' : 'text-gray-900'
               : theme === 'dark' ? 'text-purple-200' : 'text-indigo-950'
           }`}>
-            {isAi ? 'Antigravity Core' : 'You'}
+            {isAi ? 'ChatNova Core' : 'You'}
           </span>
           <span className="flex items-center gap-1 text-[10px] font-semibold text-gray-500">
             <Clock className="w-3 h-3" />
