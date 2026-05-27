@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans m-0 antialiased overflow-hidden transition-colors duration-300;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(13, 5, 24, 0.45);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.glass-card {
+  background: rgba(25, 12, 45, 0.35);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(45, 25, 75, 0.45);
+  border-color: rgba(157, 78, 221, 0.3);
+  transform: translateY(-2px);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-light:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.neon-border {
+  position: relative;
+}
+
+.neon-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to right, #9d4edd, #00f0ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(157, 78, 221, 0.2);
+  border-radius: 9999px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(157, 78, 221, 0.5);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
+
+/* AI Typing Bubble dots */
+.typing-dot {
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingBounce {
+  0%, 80%, 100% { 
+    transform: scale(0);
+    opacity: 0.3;
+  } 40% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Custom glow text effects */
+.glow-text-purple {
+  text-shadow: 0 0 10px rgba(157, 78, 221, 0.4), 0 0 20px rgba(157, 78, 221, 0.2);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.4), 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+/* Custom elements for markdown rendering support */
+.prose-custom {
+  @apply text-gray-200 leading-relaxed text-[15px];
+}
+
+.light .prose-custom {
+  @apply text-gray-800;
+}
+
+.prose-custom p {
+  @apply mb-4 last:mb-0;
+}
+
+.prose-custom h1, .prose-custom h2, .prose-custom h3, .prose-custom h4 {
+  @apply font-semibold text-white mt-6 mb-3 first:mt-0 tracking-tight;
+}
+
+.light .prose-custom h1, .light .prose-custom h2, .light .prose-custom h3, .light .prose-custom h4 {
+  @apply text-gray-900;
+}
+
+.prose-custom h1 { @apply text-2xl; }
+.prose-custom h2 { @apply text-xl; }
+.prose-custom h3 { @apply text-lg; }
+
+.prose-custom ul, .prose-custom ol {
+  @apply mb-4 pl-6;
+}
+
+.prose-custom ul {
+  @apply list-disc;
+}
+
+.prose-custom ol {
+  @apply list-decimal;
+}
+
+.prose-custom li {
+  @apply mb-1.5 last:mb-0;
+}
+
+.prose-custom blockquote {
+  @apply border-l-4 border-cyber-glow bg-purple-950/20 pl-4 py-2 pr-2 rounded-r my-4 italic text-gray-300;
+}
+
+.light .prose-custom blockquote {
+  @apply border-indigo-600 bg-indigo-50/50 text-gray-600;
+}
+
+.prose-custom table {
+  @apply w-full border-collapse my-4 text-left overflow-hidden rounded-lg;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light .prose-custom table {
+  border: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.prose-custom th, .prose-custom td {
+  @apply px-4 py-3 border-b border-white/5;
+}
+
+.light .prose-custom th, .light .prose-custom td {
+  @apply border-indigo-50;
+}
+
+.prose-custom th {
+  @apply font-medium bg-purple-950/40 text-purple-200 text-sm tracking-wider uppercase;
+}
+
+.light .prose-custom th {
+  @apply bg-indigo-50 text-indigo-900;
+}
+
+.prose-custom td {
+  @apply text-sm text-gray-300;
+}
+
+.light .prose-custom td {
+  @apply text-gray-700;
+}
+
+.prose-custom tr:last-child td {
+  @apply border-b-0;
+}
+
+.prose-custom code:not(pre code) {
+  @apply font-mono bg-purple-950/40 text-pink-400 px-1.5 py-0.5 rounded text-[13.5px] border border-purple-900/40;
+}
+
+.light .prose-custom code:not(pre code) {
+  @apply bg-indigo-50 text-indigo-600 border-indigo-100;
+}
+
+.prose-custom a {
+  @apply text-cyber-neonCyan hover:underline font-medium;
+}
+
+.light .prose-custom a {
+  @apply text-indigo-600 hover:text-indigo-800;
+}
