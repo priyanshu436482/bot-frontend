@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MessageBubble from './MessageBubble';
-import { Send, Sparkles, ArrowDown, HelpCircle, Code, HelpCircle as TableIcon, Menu } from 'lucide-react';
+import { Send, Sparkles, ArrowDown, Menu } from 'lucide-react';
 
 export default function ChatArea({
   conversation,
@@ -50,33 +50,7 @@ export default function ChatArea({
     }
   };
 
-  // Bento style suggestion prompts
-  const suggestionCards = [
-    {
-      title: "Write QuickSort",
-      desc: "Implement a sorting algorithm with an explanation table.",
-      icon: <Code className="h-5 w-5 text-zinc-450 dark:text-zinc-300" />,
-      prompt: "Write a JavaScript QuickSort function with a markdown table explaining its complexities"
-    },
-    {
-      title: "Compare UI Systems",
-      desc: "Compare Material Design, Tailwind, and Shadcn UI frameworks.",
-      icon: <TableIcon className="h-5 w-5 text-zinc-450 dark:text-zinc-300" />,
-      prompt: "Show a markdown table comparing Material Design, Tailwind, Ant Design, and Shadcn UI"
-    },
-    {
-      title: "Design System Concepts",
-      desc: "Explain the trends of Glassmorphism and Neon design.",
-      icon: <Sparkles className="h-5 w-5 text-zinc-450 dark:text-zinc-300" />,
-      prompt: "Explain the current trends of Glassmorphism and Neon glow design in 2026"
-    },
-    {
-      title: "Showcase System Config",
-      desc: "Generate a beautiful JSON block of environment specifications.",
-      icon: <HelpCircle className="h-5 w-5 text-zinc-450 dark:text-zinc-300" />,
-      prompt: "Write an intellectual response showcasing custom JSON configuration syntax"
-    }
-  ];
+
 
   return (
     <div className="relative flex flex-col flex-1 h-full min-w-0 overflow-hidden">
@@ -149,32 +123,7 @@ export default function ChatArea({
                 Welcome to ChatNova. Supply your API Key in <code className="text-zinc-355 font-mono bg-zinc-900/60 px-1.5 py-0.5 rounded border border-zinc-800">.env</code> to connect live, or run immediate UI simulation tests below.
               </p>
 
-              {/* Suggestions Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                {suggestionCards.map((card, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => onSendMessage(card.prompt)}
-                    className={`flex items-start gap-3.5 p-4 rounded-xl text-left ${
-                      theme === 'dark' ? 'glass-card' : 'glass-card-light'
-                    }`}
-                  >
-                    <div className={`p-2 rounded-lg shrink-0 ${
-                      theme === 'dark' ? 'bg-zinc-900/60 border border-zinc-800' : 'bg-zinc-150'
-                    }`}>
-                      {card.icon}
-                    </div>
-                    <div>
-                      <h4 className={`text-sm font-bold tracking-tight ${
-                        theme === 'dark' ? 'text-white' : 'text-gray-900'
-                      }`}>{card.title}</h4>
-                      <p className={`text-xs mt-1 leading-normal ${
-                        theme === 'dark' ? 'text-zinc-400' : 'text-zinc-550'
-                      }`}>{card.desc}</p>
-                    </div>
-                  </button>
-                ))}
-              </div>
+
             </motion.div>
           ) : (
             /* Render active message list */
