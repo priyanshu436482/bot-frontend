@@ -238,11 +238,11 @@ export default function Sidebar({
             </button>
           )}
 
-          {/* User Theme switcher and system status */}
-          <div className="flex items-center justify-between px-1">
+          {/* User Theme switcher */}
+          <div className="flex items-center justify-center px-1">
             <button
               onClick={toggleTheme}
-              className={`flex items-center gap-2 p-2.5 rounded-xl border transition-all duration-300 hover:scale-105 ${
+              className={`flex items-center justify-center gap-2 w-full p-2.5 rounded-xl border transition-all duration-300 hover:scale-105 ${
                 theme === 'dark'
                   ? 'bg-zinc-900/40 border-zinc-800 hover:bg-zinc-850 text-zinc-200'
                   : 'bg-white border-zinc-200 hover:bg-zinc-100 text-zinc-800'
@@ -254,11 +254,6 @@ export default function Sidebar({
                 {theme === 'dark' ? 'Obsidian' : 'Slate'}
               </span>
             </button>
-
-            <div className="flex items-center gap-1.5 text-[10px] font-semibold tracking-wider text-zinc-500 uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-              <span>Online</span>
-            </div>
           </div>
         </div>
       </div>

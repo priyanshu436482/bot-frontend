@@ -110,12 +110,6 @@ export default function ChatArea({
             </span>
           </div>
         </div>
-        
-        {/* Active status indicator on the right */}
-        <div className="flex items-center gap-1.5 text-[10px] font-semibold tracking-wider text-zinc-500 uppercase">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-          <span className="hidden sm:inline">Active Session</span>
-        </div>
       </div>
 
       {/* Scrollable Conversation messages body */}
