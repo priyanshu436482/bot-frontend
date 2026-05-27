@@ -9,17 +9,17 @@ export default {
     extend: {
       colors: {
         cyber: {
-          dark: '#03000a',
-          darker: '#07020d',
-          card: 'rgba(13, 5, 24, 0.45)',
-          glow: '#9d4edd',
-          border: 'rgba(157, 78, 221, 0.15)',
-          neonPink: '#ff007f',
-          neonCyan: '#00f0ff',
-          neonPurple: '#a020f0',
-          lightBg: '#f6f8fd',
-          lightCard: 'rgba(255, 255, 255, 0.65)',
-          lightBorder: 'rgba(99, 102, 241, 0.15)',
+          dark: '#050508',
+          darker: '#09090e',
+          card: 'rgba(17, 17, 28, 0.6)',
+          glow: '#6366f1',
+          border: 'rgba(99, 102, 241, 0.12)',
+          neonPink: '#ec4899',
+          neonCyan: '#10b981',
+          neonPurple: '#8b5cf6',
+          lightBg: '#f8fafc',
+          lightCard: 'rgba(255, 255, 255, 0.75)',
+          lightBorder: 'rgba(99, 102, 241, 0.1)',
         }
       },
       fontFamily: {
