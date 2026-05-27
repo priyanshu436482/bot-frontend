@@ -115,13 +115,8 @@ export default function ChatArea({
                   ? 'bg-gradient-to-r from-white via-zinc-200 to-zinc-400'
                   : 'bg-gradient-to-r from-zinc-950 to-zinc-700'
               } bg-clip-text text-transparent`}>
-                How can I spark your curiosity?
+                what are you thots buddy
               </h2>
-              <p className={`text-sm mt-2.5 mb-8 max-w-md ${
-                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-650'
-              }`}>
-                Welcome to ChatNova. Supply your API Key in <code className="text-zinc-355 font-mono bg-zinc-900/60 px-1.5 py-0.5 rounded border border-zinc-800">.env</code> to connect live, or run immediate UI simulation tests below.
-              </p>
 
 
             </motion.div>
