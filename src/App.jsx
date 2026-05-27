@@ -18,11 +18,11 @@ export default function App() {
     if (theme === 'dark') {
       root.classList.add('dark');
       root.classList.remove('light');
-      root.style.backgroundColor = '#03000a';
+      root.style.backgroundColor = '#020203';
     } else {
       root.classList.add('light');
       root.classList.remove('dark');
-      root.style.backgroundColor = '#f6f8fd';
+      root.style.backgroundColor = '#f4f4f5';
     }
     localStorage.setItem('chatnova_theme', theme);
   }, [theme]);
@@ -294,7 +294,7 @@ export default function App() {
       particleCount: 50,
       spread: 60,
       origin: { y: 0.8 },
-      colors: ['#a020f0', '#00f0ff', '#ff007f'],
+      colors: ['#71717a', '#cbd5e1', '#f4f4f5'],
       disableForReducedMotion: true
     });
   };
@@ -308,17 +308,17 @@ export default function App() {
       
       {/* Premium Floating Neon Gradient Particles background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Purple Orb */}
+        {/* Gray Orb 1 */}
         <div className={`absolute top-[-10%] left-[20%] w-[500px] h-[500px] rounded-full mix-blend-screen animate-float-slow opacity-15 filter blur-[90px] ${
-          theme === 'dark' ? 'bg-purple-600' : 'bg-purple-300'
+          theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-300'
         }`} />
-        {/* Cyan Orb */}
+        {/* Gray Orb 2 */}
         <div className={`absolute bottom-[-10%] right-[10%] w-[600px] h-[600px] rounded-full mix-blend-screen animate-float-slow animation-delay-4000 opacity-15 filter blur-[110px] ${
-          theme === 'dark' ? 'bg-cyan-500' : 'bg-cyan-200'
+          theme === 'dark' ? 'bg-stone-800' : 'bg-stone-200'
         }`} />
-        {/* Pink Glow Orb */}
+        {/* Gray Orb 3 */}
         <div className={`absolute top-[30%] right-[30%] w-[400px] h-[400px] rounded-full mix-blend-screen animate-float-slow animation-delay-2000 opacity-10 filter blur-[80px] ${
-          theme === 'dark' ? 'bg-pink-600' : 'bg-pink-200'
+          theme === 'dark' ? 'bg-slate-800' : 'bg-slate-200'
         }`} />
       </div>
 
@@ -345,6 +345,7 @@ export default function App() {
           onSendMessage={handleSendMessage}
           isTyping={isTyping}
           theme={theme}
+          onToggleSidebar={() => setSidebarOpen(prev => !prev)}
         />
       </div>
     </div>

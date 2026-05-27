@@ -81,23 +81,23 @@ export default function MessageBubble({ message, theme }) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      className={`group flex items-start gap-4 p-5 rounded-2xl border transition-all duration-300 ${
+      className={`group flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border transition-all duration-300 ${
         isAi
           ? theme === 'dark'
-            ? 'bg-cyber-card border-purple-900/10 hover:border-purple-800/25 shadow-sm'
-            : 'bg-cyber-lightCard border-indigo-50 hover:border-indigo-100 shadow-sm'
+            ? 'bg-cyber-card border-zinc-850/40 hover:border-zinc-800/50 shadow-sm'
+            : 'bg-cyber-lightCard border-zinc-200 hover:border-zinc-250 shadow-sm'
           : theme === 'dark'
-            ? 'bg-purple-950/10 border-transparent'
-            : 'bg-indigo-50/20 border-transparent'
+            ? 'bg-zinc-900/30 border-transparent'
+            : 'bg-zinc-100/40 border-transparent'
       }`}
     >
       {/* Icon Avatar */}
       <div className={`relative flex items-center justify-center w-9 h-9 rounded-xl shrink-0 ${
         isAi
-          ? 'bg-gradient-to-tr from-cyber-glow to-cyber-neonCyan shadow-neon-purple text-white'
+          ? 'bg-gradient-to-tr from-zinc-700 to-zinc-400 shadow-neon-purple text-white'
           : theme === 'dark'
-            ? 'bg-purple-950/40 border border-purple-800/30 text-purple-300'
-            : 'bg-indigo-100 border border-indigo-200 text-indigo-700'
+            ? 'bg-zinc-900/40 border border-zinc-800 text-zinc-400'
+            : 'bg-zinc-100 border border-zinc-200 text-zinc-700'
       }`}>
         {isAi ? (
           <Sparkles className="w-4.5 h-4.5 animate-pulse" />
@@ -113,7 +113,7 @@ export default function MessageBubble({ message, theme }) {
           <span className={`text-sm font-semibold tracking-tight ${
             isAi 
               ? theme === 'dark' ? 'text-white' : 'text-gray-900'
-              : theme === 'dark' ? 'text-purple-200' : 'text-indigo-950'
+              : theme === 'dark' ? 'text-zinc-300' : 'text-zinc-800'
           }`}>
             {isAi ? 'ChatNova Core' : 'You'}
           </span>
@@ -153,7 +153,7 @@ export default function MessageBubble({ message, theme }) {
 
         {/* Action Toolbar on Hover (and fully visible on mobile) */}
         <div className={`flex items-center gap-1.5 mt-3.5 pt-2 border-t transition-opacity duration-200 ${
-          theme === 'dark' ? 'border-purple-950/20' : 'border-indigo-100/30'
+          theme === 'dark' ? 'border-zinc-900' : 'border-zinc-200'
         } opacity-0 group-hover:opacity-100 max-md:opacity-100`}>
           
           {/* Copy Message button */}
@@ -161,8 +161,8 @@ export default function MessageBubble({ message, theme }) {
             onClick={handleCopyText}
             className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold border transition-all ${
               theme === 'dark'
-                ? 'border-purple-900/10 bg-purple-950/15 hover:bg-purple-900/30 hover:border-purple-700/40 text-purple-300 hover:text-white'
-                : 'border-indigo-50 bg-indigo-50/20 hover:bg-indigo-50 text-indigo-700 hover:text-indigo-900'
+                ? 'border-zinc-800 bg-zinc-900/20 hover:bg-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-white'
+                : 'border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-650 hover:text-zinc-900'
             }`}
             title="Copy response"
           >
@@ -187,8 +187,8 @@ export default function MessageBubble({ message, theme }) {
                 isSpeaking 
                   ? 'border-emerald-500/30 bg-emerald-950/20 text-emerald-400 hover:bg-emerald-950/40'
                   : theme === 'dark'
-                    ? 'border-purple-900/10 bg-purple-950/15 hover:bg-purple-900/30 hover:border-purple-700/40 text-purple-300 hover:text-white'
-                    : 'border-indigo-50 bg-indigo-50/20 hover:bg-indigo-50 text-indigo-700 hover:text-indigo-900'
+                    ? 'border-zinc-800 bg-zinc-900/20 hover:bg-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-white'
+                    : 'border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-650 hover:text-zinc-900'
               }`}
               title={isSpeaking ? "Mute narration" : "Speak response"}
             >

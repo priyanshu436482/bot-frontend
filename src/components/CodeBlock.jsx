@@ -17,13 +17,13 @@ export default function CodeBlock({ language, value }) {
   };
 
   return (
-    <div className="my-4 overflow-hidden rounded-lg border border-purple-900/30 shadow-md">
+    <div className="my-4 overflow-hidden rounded-lg border border-zinc-800 shadow-md">
       {/* Codeblock Header */}
-      <div className="flex items-center justify-between bg-purple-950/70 px-4 py-2 text-xs font-medium text-purple-200 border-b border-purple-900/30">
-        <span className="font-mono text-cyan-400 uppercase">{language || 'code'}</span>
+      <div className="flex items-center justify-between bg-zinc-900 px-4 py-2 text-xs font-medium text-zinc-300 border-b border-zinc-800">
+        <span className="font-mono text-zinc-400 uppercase">{language || 'code'}</span>
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1.5 rounded bg-purple-900/30 px-2.5 py-1 text-purple-300 transition-colors hover:bg-purple-900/60 hover:text-white"
+          className="flex items-center gap-1.5 rounded bg-zinc-800 px-2.5 py-1 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white"
         >
           {copied ? (
             <>
@@ -47,7 +47,7 @@ export default function CodeBlock({ language, value }) {
           customStyle={{
             margin: 0,
             padding: '1.25rem',
-            background: 'rgba(7, 2, 13, 0.95)',
+            background: '#0d0d0d',
           }}
         >
           {String(value).replace(/\n$/, '')}

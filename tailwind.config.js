@@ -9,17 +9,17 @@ export default {
     extend: {
       colors: {
         cyber: {
-          dark: '#050508',
-          darker: '#09090e',
-          card: 'rgba(17, 17, 28, 0.6)',
-          glow: '#6366f1',
-          border: 'rgba(99, 102, 241, 0.12)',
-          neonPink: '#ec4899',
-          neonCyan: '#10b981',
-          neonPurple: '#8b5cf6',
-          lightBg: '#f8fafc',
-          lightCard: 'rgba(255, 255, 255, 0.75)',
-          lightBorder: 'rgba(99, 102, 241, 0.1)',
+          dark: '#030303',
+          darker: '#09090b',
+          card: 'rgba(20, 20, 20, 0.65)',
+          glow: '#94a3b8',
+          border: 'rgba(255, 255, 255, 0.08)',
+          neonPink: '#71717a',
+          neonCyan: '#f4f4f5',
+          neonPurple: '#3f3f46',
+          lightBg: '#f4f4f5',
+          lightCard: 'rgba(255, 255, 255, 0.8)',
+          lightBorder: 'rgba(0, 0, 0, 0.06)',
         }
       },
       fontFamily: {
@@ -27,9 +27,9 @@ export default {
         mono: ['Fira Code', 'JetBrains Mono', 'monospace'],
       },
       boxShadow: {
-        'neon-purple': '0 0 15px rgba(157, 78, 221, 0.25), 0 0 30px rgba(157, 78, 221, 0.1)',
-        'neon-cyan': '0 0 15px rgba(0, 240, 255, 0.25), 0 0 30px rgba(0, 240, 255, 0.1)',
-        'neon-pink': '0 0 15px rgba(255, 0, 127, 0.25), 0 0 30px rgba(255, 0, 127, 0.1)',
+        'neon-purple': '0 0 15px rgba(161, 161, 170, 0.18), 0 0 30px rgba(161, 161, 170, 0.08)',
+        'neon-cyan': '0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1)',
+        'neon-pink': '0 0 15px rgba(113, 113, 122, 0.15), 0 0 30px rgba(113, 113, 122, 0.08)',
       },
       animation: {
         'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
