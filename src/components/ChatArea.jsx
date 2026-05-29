@@ -13,6 +13,7 @@ export default function ChatArea({
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
   const scrollAreaRef = useRef(null);
+  const textareaRef = useRef(null);
   const [showScrollDown, setShowScrollDown] = useState(false);
 
   const messages = conversation?.messages || [];
@@ -25,6 +26,19 @@ export default function ChatArea({
   useEffect(() => {
     scrollToBottom();
   }, [messages, isTyping]);
+
+  // Auto-resize textarea height as user types
+  useEffect(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    
+    // Reset height to compute scrollHeight accurately
+    textarea.style.height = 'auto';
+    
+    // Set to scrollHeight but clamp between min and max heights
+    const newHeight = Math.min(textarea.scrollHeight, 160);
+    textarea.style.height = `${newHeight}px`;
+  }, [input]);
 
   // Handle scroll detection to show a floating "Scroll Down" button if user scrolled up
   const handleScroll = () => {
@@ -45,8 +59,12 @@ export default function ChatArea({
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
+      // On mobile screens (<768px), allow Enter key to insert a newline.
+      // On desktop screens (>=768px), trigger immediate send.
+      if (window.innerWidth >= 768) {
+        e.preventDefault();
+        handleSend();
+      }
     }
   };
 
@@ -115,7 +133,7 @@ export default function ChatArea({
                   ? 'bg-gradient-to-r from-white via-zinc-200 to-zinc-400'
                   : 'bg-gradient-to-r from-zinc-950 to-zinc-700'
               } bg-clip-text text-transparent`}>
-                what are you thots buddy
+                what are your Thought buddy
               </h2>
 
 
@@ -194,10 +212,11 @@ export default function ChatArea({
             
             {/* Input textarea */}
             <textarea
+              ref={textareaRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask ChatNova anything... (Enter to send, Shift+Enter for new line)"
+              placeholder="Ask ChatNova anything..."
               rows={1}
               data-gramm="false"
               data-enable-grammarly="false"

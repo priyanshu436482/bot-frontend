@@ -302,7 +302,7 @@ export default function App() {
   const activeChat = conversations.find(c => c.id === activeId);
 
   return (
-    <div className={`relative flex w-screen h-screen overflow-hidden ${
+    <div className={`relative flex w-full h-[100dvh] min-h-[100dvh] max-h-[100dvh] overflow-hidden ${
       theme === 'dark' ? 'bg-cyber-dark text-white' : 'bg-cyber-lightBg text-gray-900'
     }`}>
       

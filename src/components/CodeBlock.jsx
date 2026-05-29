@@ -17,7 +17,7 @@ export default function CodeBlock({ language, value }) {
   };
 
   return (
-    <div className="my-4 overflow-hidden rounded-lg border border-zinc-800 shadow-md">
+    <div className="my-4 w-full max-w-full overflow-hidden rounded-lg border border-zinc-800 shadow-md">
       {/* Codeblock Header */}
       <div className="flex items-center justify-between bg-zinc-900 px-4 py-2 text-xs font-medium text-zinc-300 border-b border-zinc-800">
         <span className="font-mono text-zinc-400 uppercase">{language || 'code'}</span>
@@ -40,7 +40,7 @@ export default function CodeBlock({ language, value }) {
       </div>
 
       {/* Syntax Highlighted Code */}
-      <div className="text-[13.5px]">
+      <div className="text-[13.5px] overflow-x-auto w-full">
         <SyntaxHighlighter
           language={language || 'javascript'}
           style={vscDarkPlus}

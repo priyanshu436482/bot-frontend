@@ -144,6 +144,16 @@ export default function MessageBubble({ message, theme }) {
                     {children}
                   </code>
                 );
+              },
+              // Wrap tables in a responsive horizontal overflow container
+              table({ children, ...props }) {
+                return (
+                  <div className="overflow-x-auto w-full my-4 border border-zinc-200 dark:border-zinc-850/40 rounded-lg">
+                    <table className="w-full border-collapse text-left" {...props}>
+                      {children}
+                    </table>
+                  </div>
+                );
               }
             }}
           >

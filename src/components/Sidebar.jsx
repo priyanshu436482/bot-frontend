@@ -52,7 +52,7 @@ export default function Sidebar({
 
       {/* Sidebar Panel */}
       <div
-        className={`fixed top-0 bottom-0 left-0 z-30 flex flex-col w-[280px] border-r transition-all duration-300 md:translate-x-0 md:static ${
+        className={`fixed inset-y-0 left-0 z-30 flex flex-col w-[280px] border-r transition-all duration-300 md:translate-x-0 md:static ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } ${
           theme === 'dark'

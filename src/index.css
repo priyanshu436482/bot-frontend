@@ -130,7 +130,7 @@
 
 /* Custom elements for markdown rendering support */
 .prose-custom {
-  @apply text-gray-200 leading-relaxed text-[15px];
+  @apply text-gray-200 leading-relaxed text-[15px] break-words;
 }
 
 .light .prose-custom {
@@ -215,7 +215,7 @@
 }
 
 .prose-custom code:not(pre code) {
-  @apply font-mono bg-zinc-900/50 text-zinc-200 px-1.5 py-0.5 rounded text-[13.5px] border border-zinc-800;
+  @apply font-mono bg-zinc-900/50 text-zinc-200 px-1.5 py-0.5 rounded text-[13.5px] border border-zinc-800 break-words;
 }
 
 .light .prose-custom code:not(pre code) {
