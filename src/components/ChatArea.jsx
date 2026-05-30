@@ -167,7 +167,7 @@ export default function ChatArea({
                     <span className={`text-xs font-semibold tracking-wider uppercase ${
                       theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
                     }`}>
-                      ChatNova is streaming...
+                      𝗧𝗶𝘁𝗖𝗼𝗱𝗲 is streaming...
                     </span>
                     <div className="flex items-center gap-1.5 py-1.5">
                       <span className={`w-2 h-2 rounded-full typing-dot ${theme === 'dark' ? 'bg-zinc-400' : 'bg-zinc-800'}`} />
@@ -216,7 +216,7 @@ export default function ChatArea({
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask ChatNova anything..."
+              placeholder="Ask 𝗧𝗶𝘁𝗖𝗼𝗱𝗲 anything..."
               rows={1}
               data-gramm="false"
               data-enable-grammarly="false"

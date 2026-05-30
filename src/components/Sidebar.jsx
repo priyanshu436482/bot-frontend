@@ -68,10 +68,10 @@ export default function Sidebar({
             </div>
             <div>
               <h1 className="text-[17px] font-bold tracking-tight bg-gradient-to-r from-white via-zinc-250 to-zinc-400 bg-clip-text text-transparent dark:block hidden">
-                ChatNova
+                𝗧𝗶𝘁𝗖𝗼𝗱𝗲
               </h1>
               <h1 className="text-[17px] font-bold tracking-tight bg-gradient-to-r from-zinc-950 to-zinc-750 bg-clip-text text-transparent dark:hidden block">
-                ChatNova
+                𝗧𝗶𝘁𝗖𝗼𝗱𝗲
               </h1>
               <span className="text-[9px] font-semibold text-zinc-500 uppercase tracking-widest block -mt-0.5">
                 Next-Gen Core

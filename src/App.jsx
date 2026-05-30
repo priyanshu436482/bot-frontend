@@ -8,7 +8,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || window.location.origin
 export default function App() {
   // 1. Theme Configuration (Dark by default)
   const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('chatnova_theme');
+    const savedTheme = localStorage.getItem('titcode_theme');
     return savedTheme || 'dark';
   });
 
@@ -24,7 +24,7 @@ export default function App() {
       root.classList.remove('dark');
       root.style.backgroundColor = '#f4f4f5';
     }
-    localStorage.setItem('chatnova_theme', theme);
+    localStorage.setItem('titcode_theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
@@ -33,7 +33,7 @@ export default function App() {
 
   // 2. Chat Conversations State
   const [conversations, setConversations] = useState(() => {
-    const saved = localStorage.getItem('chatnova_chats');
+    const saved = localStorage.getItem('titcode_chats');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -45,7 +45,7 @@ export default function App() {
   });
 
   const [activeId, setActiveId] = useState(() => {
-    const savedActive = localStorage.getItem('chatnova_active_id');
+    const savedActive = localStorage.getItem('titcode_active_id');
     return savedActive || '';
   });
 
@@ -54,15 +54,15 @@ export default function App() {
 
   // Sync conversations to LocalStorage
   useEffect(() => {
-    localStorage.setItem('chatnova_chats', JSON.stringify(conversations));
+    localStorage.setItem('titcode_chats', JSON.stringify(conversations));
   }, [conversations]);
 
   // Sync active chat ID to LocalStorage
   useEffect(() => {
     if (activeId) {
-      localStorage.setItem('chatnova_active_id', activeId);
+      localStorage.setItem('titcode_active_id', activeId);
     } else {
-      localStorage.removeItem('chatnova_active_id');
+      localStorage.removeItem('titcode_active_id');
     }
   }, [activeId]);
 
@@ -119,8 +119,8 @@ export default function App() {
   const handleClearAllConversations = () => {
     setConversations([]);
     setActiveId('');
-    localStorage.removeItem('chatnova_chats');
-    localStorage.removeItem('chatnova_active_id');
+    localStorage.removeItem('titcode_chats');
+    localStorage.removeItem('titcode_active_id');
     window.speechSynthesis.cancel();
     
     // Auto trigger creation of empty chat
